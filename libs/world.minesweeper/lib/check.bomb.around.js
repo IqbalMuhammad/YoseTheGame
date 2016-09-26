@@ -3,7 +3,6 @@ function checkBombAround(data, position){
 	var gridSize = data.length;
 	var row = position[0];
 	var column = position[1];
-	var around = [];
 	
 	// --- upper
 	// row-1,column-1
@@ -52,7 +51,7 @@ function checkBombAround(data, position){
 		}
 	}
 
-	return around;
+	return bombCount;
 };
 
 module.exports = checkBombAround;
