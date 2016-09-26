@@ -4,6 +4,7 @@ var Browser = require('zombie');
 var browser = new Browser();
 var server  = require('../../libs/server');
 var url = "http://localhost:7000/minesweeper";
+var expect = require('chai').expect;
 
 var data = [
         ['empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty', 'empty'],
@@ -33,10 +34,10 @@ describe('Passing the Minesweeper: safe cell level:', function() {
             var element = browser.query('[id="cell-3x3"]');
 
             var classes = element.className;
-            expect(classes).toEqual('safe');
+            expect(classes).to.equal('safe');
 
             var innerHTML = element.innerHTML;
-            expect(innerHTML).toEqual('');
+            expect(innerHTML).to.equal('');
 
             done();
         });
