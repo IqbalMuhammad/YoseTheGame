@@ -26,12 +26,37 @@ describe('Passing the astroport gates level:', function() {
     it('returns the expected output', function(done) {
         request('http://localhost:7000/astroport/gates', function(error, response, body) {
             expect(body).to.contain( 'gate-1' );
-            expect(body).to.contain( 'gate-2' );
-            expect(body).to.contain( 'gate-3' );
-            expect(body).to.contain( 'ship-1' );
-            expect(body).to.contain( 'ship-2' );
-            expect(body).to.contain( 'ship-3' );
             done(); 
+        });
+    });
+    it('returns the expected output', function(done) {
+        request('http://localhost:7000/astroport/gates', function(error, response, body) {
+            expect(body).to.contain( 'gate-2' );
+            done();
+        });
+    });
+    it('returns the expected output', function(done) {
+        request('http://localhost:7000/astroport/gates', function(error, response, body) {
+            expect(body).to.contain( 'gate-3' );
+            done();
+        });
+    });
+    it('returns the expected output', function(done) {
+        request('http://localhost:7000/astroport/gates', function(error, response, body) {
+            expect(body).to.contain( 'ship-1' );
+            done();
+        });
+    });
+    it('returns the expected output', function(done) {
+        request('http://localhost:7000/astroport/gates', function(error, response, body) {
+            expect(body).to.contain( 'ship-2' );
+            done();
+        });
+    });
+    it('returns the expected output', function(done) {
+        request('http://localhost:7000/astroport/gates', function(error, response, body) {
+            expect(body).to.contain( 'ship-3' );
+            done();
         });
     });
    
