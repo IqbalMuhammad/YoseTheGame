@@ -1,0 +1,30 @@
+body {
+   margin: 0;
+   padding: 0;
+}
+
+#background
+{
+    left: 0px;
+    top: 0px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5696px;
+    height: 3778px;
+    overflow: hidden;
+    z-index:0;
+   }
+
+#SPRINT2
+{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 5696px;
+    height: 3778px;
+    z-index:1;
+}
+.center{
+    text-align: center;
+}
