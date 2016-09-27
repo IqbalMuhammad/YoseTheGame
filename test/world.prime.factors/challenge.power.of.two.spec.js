@@ -98,13 +98,9 @@ describe('form test ', () => {
     });
 
     it('test all element', done => {
-        browser.visit(url, (error, response, body) =>{
-            expect(body).to.contain("<h1 id='title'>")
-            // browser.assert.attribute("h1", 'id', "title");
-            // browser.assert.attribute("p", 'id', "invitation");
-            // browser.assert.attribute("input", 'id', "number");
-            // browser.assert.attribute("button", 'id', "go");
+        browser.visit(url, function(error){
+            browser.assert.elements("h1#title", 1);
+            done()
         });
-        done()
     });
 });
