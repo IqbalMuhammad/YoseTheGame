@@ -14,6 +14,6 @@ module.exports = function main(req, res) {
         ]
     };
 
-    res.setHeader('Content-Type', 'text/json');
+    res.setHeader('Content-Type', 'application/json');
     res.send(content);
 }
