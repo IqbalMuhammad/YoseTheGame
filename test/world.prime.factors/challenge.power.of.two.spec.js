@@ -100,7 +100,35 @@ describe('form test ', () => {
     it('test all element', done => {
         browser.visit(url, function(error){
             browser.assert.elements("h1#title", 1);
+            browser.assert.elements("p#invitation", 1);
+            browser.assert.elements("input#number", 1);
+            browser.assert.elements("button#go", 1);
             done()
         });
+    });
+});
+describe('form test post', () => {
+    var url     = "http://localhost:7000/primeFactors/ui";
+
+    beforeEach(function(done) {
+        testServer = http.createServer(server).listen(7000, done);
+    });
+
+    afterEach(function() {
+        testServer.close();
+    });
+
+    it('do post', done => {
+        browser.visit(url, function(error){
+            browser
+            .fill('number', 16)
+            .pressButton('go');
+            browser.assert.success();
+            done()
+        });
+    });
+    it('should be assert decomposition of 10', done => {
+        browser.assert.text('p#result', "16 : 2 2 2 2");
+        done();
     });
 });
