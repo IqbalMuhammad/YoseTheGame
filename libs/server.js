@@ -21,6 +21,10 @@ server.get('/primeFactors', function(request, response){
     require('./world.prime.factors/prime.factors')(request, response);
 });
 
+server.get('/primeFactors/ui', function (request, response) {
+    require('./world.prime.factors/prime.factors.ui')(request, response);
+});
+
 server.get('/minesweeper', function(request, response){
     require('./world.minesweeper/minesweeper')(request, response);
 });

@@ -1,5 +1,8 @@
 var request = require('request');
 var http    = require('http');
+var Browser = require('zombie');
+var browser = new Browser();
+
 var server  = require('../../libs/server');
 var expect = require('expect');
 
@@ -80,5 +83,28 @@ describe('return should multiple number', () => {
             expect(json).toEqual('[{"number":"hello","error":"not a number"},{"number":200,"decomposition":[2,2,2,5,5]},{"number":300,"decomposition":[2,2,3,5,5]}]');
             done();
         });
+    });
+});
+
+describe('form test ', () => {
+    var url     = "http://localhost:7000/primeFactors/ui";
+
+    beforeEach(function(done) {
+        testServer = http.createServer(server).listen(7000, done);
+    });
+
+    afterEach(function() {
+        testServer.close();
+    });
+
+    it('test all element', done => {
+        browser.visit(url, (error, response, body) =>{
+            expect(body).to.contain("<h1 id='title'>")
+            // browser.assert.attribute("h1", 'id', "title");
+            // browser.assert.attribute("p", 'id', "invitation");
+            // browser.assert.attribute("input", 'id', "number");
+            // browser.assert.attribute("button", 'id', "go");
+        });
+        done()
     });
 });
