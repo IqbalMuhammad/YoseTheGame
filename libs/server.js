@@ -33,4 +33,8 @@ server.get('/astroport', function (request, response) {
     require('./world.astroport/gates')(request, response);
 });
 
+server.get('/fire/geek', function (request, response) {
+    require('./world.fire/geek')(request, response);
+});
+
 module.exports = server;
