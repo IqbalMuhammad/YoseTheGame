@@ -1,21 +1,21 @@
 <html>
 <body>
 <h1 id="astroport-name">Darth Vader</h1>
-<div id="gate-1">Gate 1<div id="ship-1"></div></div>
+<div id="gate-1">Gate 1<div id="ship-1">{{result}}</div></div>
 <div id="gate-2">Gate 2<div id="ship-2"></div></div>
 <div id="gate-3">Gate 3<div id="ship-3"></div></div>
 <!--<textarea id="ship-text" rows="4" cols="50" placeholder="Ship Name"></textarea><br><br><br>-->
 
-<form>
+<form action="" method="GET">
 Ship
-  <input type="text" id="ship"/>
-  <button id="dock" type="button" onclick="ShowText();">Dock</button>
+  <input type="text" id="ship" name="ship"/>
+  <button id="dock" type="submit">Dock</button>
 </form>
 
 <script>
 function ShowText(){
 	var ship = document.getElementById('ship').value;
-	document.getElementById('ship-1').innerHTML=ship;
+	document.getElementById('ship-1').innerHTML="Ship "+ship;
 }
 </script>
 </body>
