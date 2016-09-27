@@ -64,3 +64,21 @@ describe('return should be error too big number', () => {
         });
     });
 });
+describe('return should multiple number', () => {
+
+    beforeEach(function(done) {
+        testServer = http.createServer(server).listen(7000, done);
+    });
+
+    afterEach(function() {
+        testServer.close();
+    });
+
+    it('return error too big number', done => {
+        request('http://localhost:7000/primeFactors?number=hello&number=200&number=300', function(error, response, body){
+            var json = JSON.stringify(eval("(" + body + ")"));
+            expect(json).toEqual('[{"number":"hello","error":"not a number"},{"number":200,"decomposition":[2,2,2,5,5]},{"number":300,"decomposition":[2,2,3,5,5]}]');
+            done();
+        });
+    });
+});
