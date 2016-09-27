@@ -4,5 +4,35 @@
 <div id="gate-1"><div id="ship-1"></div></div>
 <div id="gate-2"><div id="ship-2"></div></div>
 <div id="gate-3"><div id="ship-3"></div></div>
+<textarea id="ship-1" rows="4" cols="50" placeholder="Ship Name"></textarea><br><br><br>
+
+<form id="ship-dock">
+Ship
+  <input type="text" id="ship"/>
+  <button id="dock" type="button" onclick="ShowText();">Dock</button>
+</form>
+
+<script>
+function ShowText(){
+	var ship = document.getElementById('ship').value;
+	document.getElementById('ship-1').value=ship;
+
+
+	/*
+    // find each input field inside the 'myForm' form:
+    var inputs = ship-dock.getElementsByTagName('input');
+    console.log(inputs);
+    // declare 'box' variable (textarea element):
+    var box = document.getElementsById('ship-1');
+    // clear the 'box':
+    box.value = '';
+    // loop through the input elements:
+    for(var i=0; i<inputs.length; i++){
+        // append 'name' and 'value' to the 'box':
+        box.value += inputs[i].name + ': '+inputs[i].value+'\n';
+    }
+    */
+}
+</script>
 </body>
 </html>
